@@ -3,7 +3,6 @@ package Chap_04;
 public class _06_NestedLoop {
     public static void main(String[] args) {
         // 별 찍기
-
 /*      *
         **
         ***
