@@ -5,7 +5,26 @@ public class BlackBox {
     String resolution;      // 해상도  (인스턴스 변수)
     int price;              // 가격   (인스턴스 변수)
     String color;           // 색상   (인스턴스 변수)
+    int serialNumber;       // 시리얼 번호 (인스턴스 변수)
     static boolean conAutoReport = false;   // 자동 신고 기능 (스태틱 변수)
+    static int counter = 0; // 시리얼 번호를 생성해주는 역할
+
+    //----생성자----   객체가 생성될때 자동으로 호출되는 메서드
+    BlackBox(){
+//        System.out.println("기본 생성자 호출");
+//        this.serialNumber = ++counter;
+//        System.out.println("새로운 시리얼 번호를 발급 받았 습니다.");
+    }
+
+//    BlackBox(String modelName, String resolution, int price, String color){
+//        this();
+//
+//        System.out.println("사용자 정의 생성자");
+//        this.modelName = modelName;
+//        this.resolution = resolution;
+//        this.price = price;
+//        this.color = color;
+//    }
 
     void autoReport() {
         if(conAutoReport){
@@ -49,4 +68,28 @@ public class BlackBox {
         System.out.println("서비스 센터 010-7287-4029로 연결 합니다.");
     }
 
+    void appendModelName(String modelName) {
+        this.modelName += modelName;    // this가 붙은 modelname는 인스턴스 변수를 바로 지칭해주고 붙지않은것은 파라미터의 modelname이다.
+    }
+
+    //  Getter Setter
+    String getModelName(){
+        return modelName;
+    }
+
+    void setModelName(String modelName){
+        this.modelName = modelName;
+    }
+
+    int getPrice(int price){
+        return price;
+    }
+
+    void setPrice(int price){
+        if(price < 100000){
+            this.price = 100000;
+        }else {
+            this.price = price;
+        }
+    }
 }
